@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <h1>Funcionou!</h1>
+        <svg id="bola" height="100" width="100">
+            <circle cx="50" cy="50" r="50" fill="red" />
+        </svg>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+        <script>
+            const texto = document.querySelector('body>h1')
+            const bola = document.querySelector('#bola')
+            const bolaCirculo = document.querySelector('#bola>circle')
+            const timeline = new TimelineLite
+            
+            timeline
+                .to(texto, 1, {x: 100})
+                .to(texto, 0.5, {y: 100})
+                .to(bola, 1, {y: -50})
+                .to(bolaCirculo, 3, {fill: "green"})
+        </script>
+    </body>
+</html>
