@@ -1,34 +1,53 @@
 Alexandre Alvaro
 ##end
+<h2>inteligência das coisas</h2>
+Este vídeo é interativo!<br>
 ##enter
-## <h2>inteligência das coisas</h2>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js">
-<svg id="
-bola
+Você pode pausar a qualquer momento e editar o código para ver o que acontece.
+<!-- GreenSock Animation Platform -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
+<script>
+##enter
+##enter
+##backspace
+## </script>
+##up
+const textoH1 = 
+document.querySelector('
+body>h1
 ##end
-##  
-height="
+const timeline = 
+new TimelineLite()
+timeline
+.to(
+textoH1, 
+1, 
+{x: 
 100
 ##end
-##  
-width="
-100">
-
+.to(textoH1, 
+0.5, 
+{y: 100
+##end
+<svg 
+id='
+objetoSvg
+##end
+ height='100' width='100'>
 ##enter
-<circle cx="
-50
+##enter
+##backspace
+## </svg>
+##up
+<circle 
+cx='50' cy='50' 
+r='50' 
+fill='red' />
+const svgObjeto = document.querySelector('
+#objetoSvg
 ##end
-##  
-cy="
-50
+.to(svgObjeto, 3, {fill: 'green'})
+const svgCirculo = document.querySelector('#objetoSvg>
+circle
 ##end
-##  
-r="
-50
-##end
-##  
-fill="
-red
-##end
-##  />
-
+svgCirculo

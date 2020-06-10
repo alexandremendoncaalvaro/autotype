@@ -8,7 +8,7 @@ def carregarLista():
     global lista, linha_atual, total_linhas
     linha_atual = 0
     lista = []
-    arquivo_texto = open("texto.txt", "r")
+    arquivo_texto = open("texto.txt", "r", encoding="utf-8")
     for linha in arquivo_texto:
         lista.append(linha.replace('\n', ''))
     arquivo_texto.close()
@@ -16,22 +16,22 @@ def carregarLista():
 
 def escrever():
     global linha_atual
+    velocidade_digitacao = 0.05
     if linha_atual <= total_linhas:
-        velocidade_digitacao = 0.05
-
         if lista[linha_atual][:2] == '##':
             keyboard.press(lista[linha_atual][2:])
         else:
             keyboard.write(lista[linha_atual], velocidade_digitacao)
 
-        while linha_atual < total_linhas and lista[linha_atual + 1][:2] == '##':
-            linha_atual += 1
-            if lista[linha_atual][3:4] == ' ':
+        linha_atual += 1
+
+        while linha_atual <= total_linhas and lista[linha_atual][:2] == '##':
+            if lista[linha_atual][2:3] == ' ':
                 keyboard.write(lista[linha_atual][3:], velocidade_digitacao)
             else:
                 keyboard.press(lista[linha_atual][2:])
-        
-        linha_atual += 1
+            linha_atual += 1
+
 
 def voltar():
     global linha_atual
